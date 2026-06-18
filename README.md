@@ -87,7 +87,7 @@ Todo o conteúdo é disponibilizado para fins educacionais.
 
 ---
 
-*por [@MarcoA-013](https://github.com/MarcoA-013)*- **Q7** Proprietário, conta, último desligamento e último logon
+*por [@dimatp](https://github.com/Dimatp)*- **Q7** Proprietário, conta, último desligamento e último logon
 - **Q8** Programas suspeitos e arquivos na lixeira
 - **Q9** Timeline das evidências
 - **Q10** Laudo pericial formal
