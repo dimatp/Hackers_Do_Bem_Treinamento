@@ -45,6 +45,26 @@
          <lastmod>2026-06-18</lastmod>
     </url>
     <url>
+         <loc>https://dimatp.github.io/THDB/parte1_zeek/q1-mac/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte1_zeek/q2-hostname/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte1_zeek/q3-url/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte1_zeek/q4-infeccao/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte1_zeek/q5-relatorio-cti/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
          <loc>https://dimatp.github.io/THDB/parte2/introducao/</loc>
          <lastmod>2026-06-18</lastmod>
     </url>
@@ -69,6 +89,26 @@
          <lastmod>2026-06-18</lastmod>
     </url>
     <url>
+         <loc>https://dimatp.github.io/THDB/parte2_autopsy/q10-laudo/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte2_autopsy/q6-hash-so/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte2_autopsy/q7-perfil/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte2_autopsy/q8-programas-lixeira/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/parte2_autopsy/q9-timeline/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
          <loc>https://dimatp.github.io/THDB/referencias/fontes/</loc>
          <lastmod>2026-06-18</lastmod>
     </url>
@@ -82,6 +122,30 @@
     </url>
     <url>
          <loc>https://dimatp.github.io/THDB/referencias/mitre/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/roteiros/configuracao/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/roteiros/emotet/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/roteiros/glossario/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/roteiros/greg-schardt/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/roteiros/legislacao/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://dimatp.github.io/THDB/roteiros/mitre/</loc>
          <lastmod>2026-06-18</lastmod>
     </url>
 </urlset>

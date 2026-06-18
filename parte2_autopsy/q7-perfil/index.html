@@ -12,9 +12,13 @@
         <meta name="author" content="Timóteo Dima Pereira">
       
       
-        <link rel="canonical" href="https://dimatp.github.io/THDB/parte1/q3-url/">
+        <link rel="canonical" href="https://dimatp.github.io/THDB/parte2_autopsy/q7-perfil/">
       
       
+        <link rel="prev" href="../q6-hash-so/">
+      
+      
+        <link rel="next" href="../q8-programas-lixeira/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Q3 — URL que entregou o documento Word - THDB — Forense Digital e Resposta a Incidente - Estudo de Caso Completo</title>
+        <title>Q7 — Perfil do suspeito - THDB — Forense Digital e Resposta a Incidente - Estudo de Caso Completo</title>
       
     
     
@@ -117,11 +121,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#q3-url-que-entregou-o-documento-word" class="md-skip">
-          Ir para o conteúdo
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -154,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Q3 — URL que entregou o documento Word
+              Q7 — Perfil do suspeito
             
           </span>
         </div>
@@ -338,11 +337,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../parte2_autopsy/analise.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../analise.md" class="md-tabs__link">
           
   
   
@@ -921,28 +922,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -960,7 +964,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -978,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parte2_autopsy/analise.md" class="md-nav__link">
+      <a href="../analise.md" class="md-nav__link">
         
   
   
@@ -1006,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parte2_autopsy/q6-hash-so/" class="md-nav__link">
+      <a href="../q6-hash-so/" class="md-nav__link">
         
   
   
@@ -1031,10 +1035,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../parte2_autopsy/q7-perfil/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1050,6 +1061,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1062,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parte2_autopsy/q8-programas-lixeira/" class="md-nav__link">
+      <a href="../q8-programas-lixeira/" class="md-nav__link">
         
   
   
@@ -1090,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parte2_autopsy/q9-timeline/" class="md-nav__link">
+      <a href="../q9-timeline/" class="md-nav__link">
         
   
   
@@ -1118,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parte2_autopsy/q10-laudo/" class="md-nav__link">
+      <a href="../q10-laudo/" class="md-nav__link">
         
   
   
@@ -1311,88 +1323,9 @@
   
 
 
-<h1 id="q3-url-que-entregou-o-documento-word">Q3 — URL que entregou o documento Word<a class="headerlink" href="#q3-url-que-entregou-o-documento-word" title="Permanent link">&para;</a></h1>
-<h2 id="a-pergunta">A pergunta<a class="headerlink" href="#a-pergunta" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Qual URL no pcap retornou um documento Microsoft Word?</p>
-</blockquote>
-<hr />
-<h2 id="estrategia-de-analise">Estratégia de análise<a class="headerlink" href="#estrategia-de-analise" title="Permanent link">&para;</a></h2>
-<p>O <code>http.log</code> do Zeek registra todas as requisições HTTP, incluindo o campo <code>resp_mime_types</code> — o tipo MIME declarado pelo servidor na resposta. Para identificar a entrega de um documento Word, buscamos pelo MIME type <code>application/msword</code> (formato <code>.doc</code> legado) ou <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> (formato <code>.docx</code>).</p>
-<hr />
-<h2 id="comando">Comando<a class="headerlink" href="#comando" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Panorama dos MIME types presentes no tráfego</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/opt/zeek/bin/zeek-cut<span class="w"> </span>resp_mime_types<span class="w"> </span>&lt;<span class="w"> </span>http.log<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;^#\|-&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rn
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Extrair a URL que entregou o documento Word</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>/opt/zeek/bin/zeek-cut<span class="w"> </span>host<span class="w"> </span>uri<span class="w"> </span>resp_mime_types<span class="w"> </span>&lt;<span class="w"> </span>http.log<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;msword\|openxmlformats\|vnd.ms-word&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print &quot;http://&quot; $1 $2, &quot;\t[&quot; $3 &quot;]&quot;}&#39;</span>
-</span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Se <code>resp_mime_types</code> retornar vazio (<code>-</code>)</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Alternativa 1: buscar por extensão na URI</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/opt/zeek/bin/zeek-cut<span class="w"> </span>host<span class="w"> </span>uri<span class="w"> </span>&lt;<span class="w"> </span>http.log<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;\.doc\|\.docx\|\.dot\b&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Alternativa 2: via files.log (identificação por magic bytes — mais confiável)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>/opt/zeek/bin/zeek-cut<span class="w"> </span>tx_hosts<span class="w"> </span>rx_hosts<span class="w"> </span>mime_type<span class="w"> </span>filename<span class="w"> </span>&lt;<span class="w"> </span>files.log<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;msword\|openxml\|word&quot;</span>
-</span></code></pre></div>
-</div>
-<h2 id="resultado">Resultado<a class="headerlink" href="#resultado" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://ifcingenieria.cl/QpX8It/BIZ/Firmenkunden/    [application/msword]
-</span></code></pre></div>
-<hr />
-<h2 id="interpretacao">Interpretação<a class="headerlink" href="#interpretacao" title="Permanent link">&para;</a></h2>
-<p>Cada elemento da URL revela informações sobre a campanha:</p>
-<p><strong><code>ifcingenieria.cl</code></strong> — domínio de uma empresa de engenharia chilena legítima. O site foi <strong>comprometido</strong> e utilizado como hospedeiro do malware. Usar sites legítimos como infraestrutura de entrega é uma técnica deliberada: filtros de reputação de domínio raramente bloqueiam sites corporativos ativos.</p>
-<p><strong><code>/QpX8It/</code></strong> — segmento com aparência de ID aleatório. Esse padrão é característico de painéis C2 que geram caminhos únicos por campanha ou por vítima, dificultando o bloqueio por regras simples de URL.</p>
-<p><strong><code>/BIZ/Firmenkunden/</code></strong> — <em>Firmenkunden</em> significa "clientes corporativos" em alemão. Combinado com o nome do documento (<code>2018_11Details_zur_Transaktion.doc</code> — "Detalhes da Transação — Novembro 2018"), a isca é claramente direcionada a um contexto financeiro corporativo de língua alemã ou com operações na Europa.</p>
-<p><strong>Ausência de extensão <code>.doc</code> na URL</strong> — o arquivo é servido dinamicamente. Filtros que bloqueiam URLs terminadas em <code>.exe</code> ou <code>.doc</code> não teriam efeito aqui.</p>
-<div class="admonition warning">
-<p class="admonition-title">Site legítimo comprometido — implicações para resposta</p>
-<p>Bloquear o domínio <code>ifcingenieria.cl</code> no proxy corporativo é necessário para conter a ameaça imediata. Porém, como se trata de um site legítimo comprometido (não de infraestrutura criminosa dedicada), vale também considerar notificar o proprietário do domínio — uma prática de boa-fé na comunidade de segurança.</p>
-</div>
-<hr />
-<h2 id="ioc-registrado">IoC registrado<a class="headerlink" href="#ioc-registrado" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Tipo</th>
-<th>Valor</th>
-<th>Fonte</th>
-<th>Confiança</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>URL maliciosa</td>
-<td><code>http://ifcingenieria.cl/QpX8It/BIZ/Firmenkunden/</code></td>
-<td><code>http.log</code></td>
-<td>Alta</td>
-</tr>
-<tr>
-<td>Site hospedeiro</td>
-<td><code>ifcingenieria.cl</code> (comprometido)</td>
-<td><code>http.log</code></td>
-<td>Alta</td>
-</tr>
-<tr>
-<td>Documento lure</td>
-<td><code>2018_11Details_zur_Transaktion.doc</code></td>
-<td><code>files.log</code></td>
-<td>Alta</td>
-</tr>
-<tr>
-<td>MIME type</td>
-<td><code>application/msword</code></td>
-<td><code>http.log</code></td>
-<td>Alta</td>
-</tr>
-</tbody>
-</table>
+  <h1>Q7 — Perfil do suspeito</h1>
+
+
 
 
 
@@ -1415,7 +1348,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de junho de 2026 13:37:22 UTC">18 de junho de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de junho de 2026 18:38:03 UTC">18 de junho de 2026</span>
   </span>
 
     
@@ -1425,7 +1358,7 @@
     <span class="md-icon" title="Criada">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de junho de 2026 13:37:22 UTC">18 de junho de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de junho de 2026 17:02:13 UTC">18 de junho de 2026</span>
   </span>
 
     
@@ -1457,6 +1390,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../q6-hash-so/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Q6 — Integridade e SO">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Q6 — Integridade e SO
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../q8-programas-lixeira/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Q8 — Programas e Lixeira">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Q8 — Programas e Lixeira
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
