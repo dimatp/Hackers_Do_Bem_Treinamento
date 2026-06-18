@@ -1,0 +1,123 @@
+site_name: HdB-RIF — Relatório de Incidente Forense
+site_description: >
+  Estudo de caso completo de resposta a incidente e forense digital,
+  cobrindo análise de tráfego de rede com Zeek e análise de disco com Autopsy.
+site_author: MarcoA-013
+site_url: https://marcoa-013.github.io/HdB-RIF/
+repo_url: https://github.com/MarcoA-013/HdB-RIF
+repo_name: MarcoA-013/HdB-RIF
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      tip: octicons/light-bulb-16
+      warning: octicons/alert-16
+      danger: octicons/zap-16
+      info: octicons/info-16
+
+plugins:
+  - search:
+      lang: pt
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+      title: Nesta página
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MarcoA-013/HdB-RIF
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Início: index.md
+  - Contexto do Caso:
+    - Visão Geral: contexto/visao-geral.md
+    - O que é Emotet: contexto/emotet.md
+    - Caso Greg Schardt (NIST): contexto/greg-schardt.md
+  - Ambiente de Lab:
+    - Configuração: ambiente/configuracao.md
+  - Parte 1 — Zeek:
+    - Introdução: parte1/introducao.md
+    - Q1 — Endereço MAC: parte1/q1-mac.md
+    - Q2 — Hostname: parte1/q2-hostname.md
+    - Q3 — URL maliciosa: parte1/q3-url.md
+    - Q4 — Tipo de infecção: parte1/q4-infeccao.md
+    - Q5 — Relatório CTI: parte1/q5-relatorio-cti.md
+  - Parte 2 — Autopsy:
+    - Introdução: parte2/introducao.md
+    - Q6 — Integridade e SO: parte2/q6-hash-so.md
+    - Q7 — Perfil do suspeito: parte2/q7-perfil.md
+    - Q8 — Programas e Lixeira: parte2/q8-programas-lixeira.md
+    - Q9 — Timeline: parte2/q9-timeline.md
+    - Q10 — Laudo Pericial: parte2/q10-laudo.md
+  - Referências:
+    - MITRE ATT&CK: referencias/mitre.md
+    - Legislação Brasileira: referencias/legislacao.md
+    - Glossário: referencias/glossario.md
+    - Fontes e Créditos: referencias/fontes.md
