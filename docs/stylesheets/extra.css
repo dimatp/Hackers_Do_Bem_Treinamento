@@ -1,3 +1,13 @@
+:root {
+    --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    --md-code-font: "JetBrains Mono", SFMono-Regular, Consolas, Menlo, monospace;
+}
+
+/* Deixa o visual dos blocos de código levemente arredondados */
+.md-typeset pre, .md-typeset code {
+    border-radius: 4px;
+}
+
 /* Destaque para blocos de comando zeek-cut */
 .highlight .c1 { font-style: italic; }
 

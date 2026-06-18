@@ -10,7 +10,7 @@ O **Laudo Pericial** é o documento técnico-jurídico produzido pelo perito for
 
 ### 1. Identificação
 
-```
+``` text
 LAUDO PERICIAL Nº: [XXX/2026/DCC]
 Processo:         [número do processo]
 Data de Autuação: [data]
