@@ -1,3 +1,4 @@
+
 name: Publicar documentação
 
 on:
@@ -13,9 +14,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Baixar o código do repositório
         uses: actions/checkout@v4
         with:
+          submodules: false
           fetch-depth: 0   # necessário para git-revision-date
 
       - name: Configurar Python
