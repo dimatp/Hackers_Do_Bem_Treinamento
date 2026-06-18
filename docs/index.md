@@ -1,4 +1,4 @@
-# HdB-RIF — Relatório de Incidente Forense
+# THDB — Relatório de Incidente Forense
 
 !!! info "Sobre este material"
     Este projeto documenta um estudo de caso completo de **resposta a incidente e forense digital**, conduzido em ambiente de laboratório controlado. O objetivo é servir como referência prática para estudantes que estão iniciando nas áreas de CTI (*Cyber Threat Intelligence*) e análise forense.
